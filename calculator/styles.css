@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calculator-container">
+        <h1 class="calculator-title">Simple Calculator</h1>
+        <div class="calculator">
+            <input type="text" class="display" disabled>
+            <div class="buttons">
+                <button class="number">7</button>
+                <button class="number">8</button>
+                <button class="number">9</button>
+                <button class="operator">÷</button>
+                <button class="number">4</button>
+                <button class="number">5</button>
+                <button class="number">6</button>
+                <button class="operator">×</button>
+                <button class="number">1</button>
+                <button class="number">2</button>
+                <button class="number">3</button>
+                <button class="operator">-</button>
+                <button class="number">0</button>
+                <button class="decimal">.</button>
+                <button class="equals">=</button>
+                <button class="operator">+</button>
+                <button class="clear">C</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(to right, #2b5876, #4e4376);
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.calculator-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.calculator-title {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.calculator {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    max-width: 350px;
+}
+
+.display {
+    width: 100%;
+    height: 60px;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    font-size: 32px;
+    text-align: right;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: #333;
+    box-sizing: border-box;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+button {
+    padding: 20px;
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.number {
+    background: linear-gradient(145deg, #757575, #5a5a5a);
+    color: white;
+}
+
+.operator {
+    background: linear-gradient(145deg, #ffa726, #ff9100);
+    color: white;
+    font-size: 24px;
+}
+
+.equals {
+    background: linear-gradient(145deg, #2196f3, #1976d2);
+    color: white;
+}
+
+.clear {
+    background: linear-gradient(145deg, #f44336, #d32f2f);
+    color: white;
+}
+
+button:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.decimal {
+    background: linear-gradient(145deg, #757575, #5a5a5a);
+    color: white;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 480px) {
+    .calculator-container {
+        padding: 10px;
+    }
+
+    .calculator-title {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    .calculator {
+        padding: 15px;
+    }
+
+    .display {
+        height: 50px;
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    .buttons {
+        gap: 8px;
+    }
+
+    button {
+        padding: 15px;
+        font-size: 18px;
+    }
+
+    .operator {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .calculator {
+        padding: 10px;
+    }
+
+    .buttons {
+        gap: 5px;
+    }
+
+    button {
+        padding: 12px;
+        font-size: 16px;
+    }
+}
