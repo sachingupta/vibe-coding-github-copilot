@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoji Mood Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 24px;
+        }
+        #moodInput {
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            margin-bottom: 12px;
+            width: 220px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background-color: #388e3c;
+        }
+        #emojiResult {
+            font-size: 3em;
+            margin-top: 28px;
+            min-height: 1em;
+            text-align: center;
+        } 
+    </style>
+
+
+</head>
+<body>
+    <h1>Emoji Mood Generator</h1>
+    <input type="text" id="moodInput" placeholder="Type your mood..." />
+    <button onclick="generateEmoji()">Generate Emoji</button>
+    <div id="emojiResult" style="font-size: 2em; margin-top: 20px;"></div>
+    <script>
+        const moodEmojis = {
+            happy: "😀",
+            sad: "😭",
+            love: "😍",
+            cool: "😎",
+            angry: "😡",
+            thinking: "🤔",
+            tired: "😴",
+            excited: "🤩",
+            party: "🥳",
+            funny: "😂"
+        };
+
+        function generateEmoji() {
+            const mood = document.getElementById('moodInput').value.trim().toLowerCase();
+            const emoji = moodEmojis[mood] || "🤷‍♂️";
+            document.getElementById('emojiResult').textContent = emoji;
+        }
+    </script>
+</body>
+</html>

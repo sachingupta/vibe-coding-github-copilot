@@ -17,14 +17,24 @@ function formatNumber(number) {
 function calculate(first, second, operator) {
     first = Number(first);
     second = Number(second);
-    
+    let result;
+
     switch(operator) {
-        case '+': return first + second;
-        case '-': return first - second;
-        case '×': return first * second;
-        case '÷': return second === 0 ? 'Error' : first / second;
-        default: return second;
+        case '+': result = first + second; break;
+        case '-': result = first - second; break;
+        case '×': result = first * second; break;
+        case '÷': result = second === 0 ? 'Error' : first / second; break;
+        default: result = second;
     }
+
+    if (result === 'Error') return result;
+
+    // Fix floating point precision by rounding to 10 decimal places
+    if (typeof result === 'number') {
+        result = Math.round((result + Number.EPSILON) * 1e10) / 1e10;
+    }
+
+    return result;
 }
 
 function updateDisplay(value = currentValue) {
